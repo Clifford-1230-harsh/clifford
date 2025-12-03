@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jami's Profile</title>
+    <link rel="stylesheet" href="me.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <a href="main.html">Home</a>
+        <a href="main.html">About</a>
+
+        <!-- CLICK DROPDOWN -->
+        <div class="dropdown">
+            <div class="dropbtn" id="careerBtn">Career ▾</div>
+
+            <div class="dropdown-content" id="dropdownMenu">
+                <a href="denise.html">Denise</a>
+                <a href="me.html">Jami</a>
+                <a href="clark.html">Clark</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <div class="about-section">
+        <h2>Personal Information</h2>
+
+        <div class="about-layout">
+            <div class="about-img">
+                <img src="C:\Users\Jamison\OneDrive\Desktop\Codes For java\ortfolio\me.jpg" alt="">
+            </div>
+
+            <div class="about-info">
+                <strong>Name:</strong><br>
+                <p>Jamison Clifford C. Garcia</p>
+                <strong>Age:</strong><br>
+                <p>19 Years Old</p>
+                <strong>Skills:</strong><br>
+                <p>Creativity, Visual Design, Adaptability, Computer Literacy</p>
+                <strong>Bio:</strong>
+                <p>I am an Information Technology First Year Student at the University of the Cordilleras who enjoys creating digital designs, exploring new creative tools, and contributing fresh ideas to every project I join.</p>
+            </div>
+        </div>
+    </div>
+<h1 class="heading">MBTI RESULT</h1>
+    <!-- ⭐ NEW 4 BOXES SECTION -->
+    <div class="four-box-section">
+        <div class="mini-box">
+            <div class="mini-img">
+                <img src="C:\Users\Jamison\OneDrive\Desktop\Codes For java\ortfolio\i.png" alt="">
+            </div>
+            <p>Introversion: I recharge through solitude and deep, meaningful interactions rather than frequent social activity.</p>
+        </div>
+
+        <div class="mini-box">
+            <div class="mini-img">
+                <img src="C:\Users\Jamison\OneDrive\Desktop\Codes For java\ortfolio\n.png" alt="">
+            </div>
+            <p>Intuition: I focus on concepts, patterns, and underlying meanings instead of surface-level details.</p>
+        </div>
+
+        <div class="mini-box">
+            <div class="mini-img">
+                <img src="C:\Users\Jamison\OneDrive\Desktop\Codes For java\ortfolio\f.png" alt="">
+            </div>
+            <p>Judging: I prefer structure, planning, and clear decisions over spontaneity or unpredictability.</p>
+        </div>
+
+        <div class="mini-box">
+            <div class="mini-img">
+                <img src="C:\Users\Jamison\OneDrive\Desktop\Codes For java\ortfolio\j.png" alt="">
+            </div>
+            <p>I prefer to make plans and organized always</p>
+        </div>
+    </div>
+
+
+<h1 class="proj-heading">Projects and Achievements</h1>
+
+<div class="project-section">
+
+    <!-- LEFT IMAGE / RIGHT TEXT -->
+    <div class="project-row">
+        <div class="proj-img"><img src="C:\Users\Jamison\OneDrive\Desktop\Codes For java\ortfolio\me-achieve.jpg"></div>
+        <div class="proj-text">
+            <h3>Created Artfolio</h3>
+            <p>Artfolio is a personal online gallery website I built to showcase digital artworks, graphic layouts, and creative edits I’ve made over the years. I created this website as one of my major outputs in Senior High School, the University of the Cordilleras, to practice front-end design and visual layout consistency. The site was made using HTML, CSS, and JavaScript, and it helped me develop a cleaner sense of UI styling.</p>
+        </div>
+    </div>
+
+    <!-- RIGHT IMAGE / LEFT TEXT -->
+    <div class="project-row reverse">
+        <div class="proj-img"><img src="C:\Users\Jamison\OneDrive\Desktop\Codes For java\ortfolio\me-achieve2.jpg"></div>
+        <div class="proj-text">
+            <h3>Joined the Regional Multimedia Skills Challenge</h3>
+            <p>I competed in the Regional Multimedia Skills Challenge where I collaborated with a small team to create a visual storyline and promotional poster layout under time pressure. This competition helped me explore my creativity while improving my design decisions, teamwork, and handling of fast-paced tasks.</p>
+        </div>
+    </div>
+
+    <!-- LEFT IMAGE / RIGHT TEXT -->
+    <div class="project-row">
+        <div class="proj-img"><img src="C:\Users\Jamison\OneDrive\Desktop\Codes For java\ortfolio\me-achieve3.jpg"></div>
+        <div class="proj-text">
+            <h3>Developed a Portfolio </h3>
+            <p>Image Sorter Program
+I created a simple image-sorting program that organizes files by category and file type. I developed it using Python to help manage project assets more efficiently, especially when dealing with multiple images for design work. This was one of my early coding projects that strengthened my understanding of file handling and automation.</p>
+        </div>
+    </div>
+
+</div>
+
+
+
+    <script>
+        /* DROPDOWN CLICK FUNCTION */
+        const careerBtn = document.getElementById("careerBtn");
+        const dropdownMenu = document.getElementById("dropdownMenu");
+
+        careerBtn.addEventListener("click", () => {
+            dropdownMenu.classList.toggle("show");
+        });
+
+        document.addEventListener("click", (event) => {
+            if (!careerBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.classList.remove("show");
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,235 @@
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #2b2b2b, #5c0000);
+    background-attachment: fixed;
+    color: #fff;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(10px);
+    z-index: 200;
+}
+
+.navbar a,
+.dropbtn {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.navbar a:hover,
+.dropbtn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+}
+
+/* DROPDOWN */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.85);
+    min-width: 150px;
+    border-radius: 15px;
+    margin-top: 10px;
+    padding: 10px 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: 0.3s ease;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 18px;
+    color: #ffcc00;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* SHOW ON CLICK */
+.dropdown-content.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ABOUT SECTION */
+.about-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 60px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 40px;
+    text-align: center;
+}
+
+/* LAYOUT */
+.about-layout {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+/* IMAGE BOX */
+.about-img img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #2b2b2b, #5c0000); /* SAME AS PAGE BG */
+}
+
+/* TEXT */
+.about-info {
+    max-width: 500px;
+    text-align: left;
+}
+
+.about-info h3 {
+    margin-bottom: 10px;
+}
+
+/* ======== FOUR BOXES SECTION ======== */
+.four-box-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto 60px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.mini-box {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 20px;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.mini-img img {
+    width: 100%;
+    height: 200px;
+    background: rgba(0, 0, 0, 0.45);
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+.mini-box p {
+    font-size: 15px;
+    opacity: 0.8;
+}
+
+/* ============================
+   PROJECTS & ACHIEVEMENTS
+============================= */
+.proj-heading {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.project-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.project-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 30px;
+    border-radius: 25px;
+}
+
+/* reverse row (image right) */
+.project-row.reverse {
+    flex-direction: row-reverse;
+}
+
+/* IMAGE */
+.proj-img img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* TEXT */
+.proj-text {
+    flex: 1;
+}
+
+.proj-text p {
+    opacity: 0.8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 850px) {
+    .project-row,
+    .project-row.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .proj-img img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 850px) {
+    .four-box-section {
+        flex-direction: column;
+    }
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 850px) {
+    .about-layout {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-info {
+        text-align: center;
+    }
+
+    .about-img {
+        width: 100%;
+        height: 250px;
+    }
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clark's Profile</title>
+    <link rel="stylesheet" href="clark.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <a href="main.html">Home</a>
+        <a href="main.html">About</a>
+
+        <!-- CLICK DROPDOWN -->
+        <div class="dropdown">
+            <div class="dropbtn" id="careerBtn">Career ▾</div>
+
+            <div class="dropdown-content" id="dropdownMenu">
+                <a href="denise.html">Denise</a>
+                <a href="me.html">Jami</a>
+                <a href="clark.html">Clark</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <div class="about-section">
+        <h2>Personal Information</h2>
+
+        <div class="about-layout">
+            <div class="about-img">
+                <img src="C:\Users\Jamison\OneDrive\Desktop\Codes For java\ortfolio\clark.jpg" alt="clark">
+            </div>
+
+            <div class="about-info">
+                <strong>Name:</strong><br>
+                <p>Clark Latrell F. Dolo</p>
+                <strong>Age:</strong><br>
+                <p>19 Years Old</p>
+                <strong>Skills:</strong><br>
+                <p>Detail-Oriented, Adaptable, Team Collaboration, Technical Literacy</p>
+                <strong>Bio:</strong>
+                <p>I am an Information Technology First Year Student at the University of the Cordilleras who enjoys exploring new technologies, developing practical solutions, and contributing to projects through consistent teamwork and dedication.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ⭐ NEW 4 BOXES SECTION -->
+    <div class="four-box-section">
+        <div class="mini-box">
+            <div class="mini-img">
+                <img src="C:\Users\Jamison\OneDrive\Desktop\Codes For java\ortfolio\i.png" alt="">
+            </div>
+            <p>I prefer being alone if the group of people Im with are not my friends. I also love working alone doing
+                tasks</p>
+        </div>
+
+        <div class="mini-box">
+            <div class="mini-img">
+                <img src="C:\Users\Jamison\OneDrive\Desktop\Codes For java\ortfolio\s.png" alt="">
+            </div>
+            <p>I prefer assessing the situation that Im in to make assumptions</p>
+        </div>
+
+        <div class="mini-box">
+            <div class="mini-img">
+                <img src="C:\Users\Jamison\OneDrive\Desktop\Codes For java\ortfolio\f.png" alt="">
+            </div>
+            <p>I tend to make decisions base on what I think are good</p>
+        </div>
+
+        <div class="mini-box">
+            <div class="mini-img">
+                <img src="C:\Users\Jamison\OneDrive\Desktop\Codes For java\ortfolio\p.png" alt="">
+            </div>
+            <p>I tend to perceive thinks on how they would play out base in that moment</p>
+        </div>
+    </div>
+
+    <h1 class="proj-heading">Projects and Achievements</h1>
+
+<div class="project-section">
+
+    <!-- LEFT IMAGE / RIGHT TEXT -->
+    <div class="project-row">
+        <div class="proj-img"><img src="C:\Users\Jamison\OneDrive\Desktop\Codes For java\ortfolio\dolo-achive.jpg"></div>
+        <div class="proj-text">
+            <h3>Created ITspace</h3>
+            <p>ITspace is a simple but functional website that showcases basic IT projects and quick tech tutorials for beginners. I built this as my final output back in Senior High School in the University of the Cordilleras to practice front-end development and present clean, organized project layouts. The website was made using HTML, CSS, and a bit of JavaScript.
+</p>
+        </div>
+    </div>
+
+    <!-- RIGHT IMAGE / LEFT TEXT -->
+    <div class="project-row reverse">
+        <div class="proj-img"><img src="C:\Users\Jamison\OneDrive\Desktop\Codes For java\ortfolio\dolo-achieve2.jpg"></div>
+        <div class="proj-text">
+            <h3>Joined the ICT </h3>
+            <p>Innovation Challenge
+I participated in the ICT Innovation Challenge, where I collaborated with my classmates to create a small-scale digital website focused on helping students manage their tasks. This competition strengthened my teamwork, time management, and problem-solving skills as a first-time competitor.</p>
+        </div>
+    </div>
+
+    <!-- LEFT IMAGE / RIGHT TEXT -->
+    <div class="project-row">
+        <div class="proj-img"><img src="C:\Users\Jamison\OneDrive\Desktop\Codes For java\ortfolio\dolo-achieve3.jpg"></div>
+        <div class="proj-text">
+            <h3>Developed a Student Login System</h3>
+            <p>I created a simple login and registration system as part of my programming exercises. The program was made using Python and focuses on handling user input, validating data, and storing information securely in a basic file system. It served as one of my earliest steps into understanding authentication and backend logic.</p>
+
+        </div>
+    </div>
+
+</div>
+
+
+    <script>
+        /* DROPDOWN CLICK FUNCTION */
+        const careerBtn = document.getElementById("careerBtn");
+        const dropdownMenu = document.getElementById("dropdownMenu");
+
+        careerBtn.addEventListener("click", () => {
+            dropdownMenu.classList.toggle("show");
+        });
+
+        document.addEventListener("click", (event) => {
+            if (!careerBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.classList.remove("show");
+            }
+        });
+    </script>
+
+</body>
+
+</html>

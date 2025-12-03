@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        /* Extra styling for form */
+        .comment-form {
+            margin: 40px auto;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .comment-form input,
+        .comment-form textarea {
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .comment-form button {
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            background: #ffcc00;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .comment-form button:hover {
+            background: #e6b800;
+        }
+
+        .comments-display {
+            max-width: 600px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .comment-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 15px;
+        }
+
+        .comment-item h4 {
+            margin: 0 0 5px;
+            font-size: 18px;
+            color: #ffcc00;
+        }
+
+        .comment-item p {
+            margin: 0;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <a href="main.html">Home</a>
+        <a href="main.html">About</a>
+
+        <!-- CLICK DROPDOWN -->
+        <div class="dropdown">
+            <div class="dropbtn">Career ▾</div>
+            <div class="dropdown-content">
+                <a href="denise.html">Denise</a>
+                <a href="me.html">Jami</a>
+                <a href="clark.html">Clark</a>
+            </div>
+        </div>
+
+        <!-- CONTACT TAB -->
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- CONTACT INFO SECTION -->
+    <div class="contact-section">
+        <h2>Contact Us</h2>
+        <p>You can reach us at:</p>
+
+        <ul>
+            <li>📞 0912345678 Denise</li>
+            <li>📞 0987654321 Jamisson</li>
+            <li>📞 0911122233 Clark</li>
+        </ul>
+
+        <p>Or email us at:</p>
+
+        <ul>
+            <li>📧 Denise3245@gmail.com</li>
+            <li>📧 Jamisson2321@gmail.com</li>
+            <li>📧 Clark35215@gmail.com</li>
+        </ul>
+    </div>
+
+    <!-- COMMENT FORM -->
+    <div class="contact-section">
+        <h2>Leave a Comment</h2>
+        <form class="comment-form" id="commentForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="comment" rows="5" placeholder="Your Comment" required></textarea>
+            <button type="submit">Submit Comment</button>
+        </form>
+
+        <!-- COMMENTS DISPLAY -->
+        <div class="comments-display" id="commentsDisplay">
+            <!-- Comments will appear here -->
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById("commentForm");
+        const display = document.getElementById("commentsDisplay");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const comment = document.getElementById("comment").value;
+
+            const commentItem = document.createElement("div");
+            commentItem.classList.add("comment-item");
+            commentItem.innerHTML = `<h4>${name} (${email})</h4><p>${comment}</p>`;
+
+            display.appendChild(commentItem);
+
+            form.reset();
+        });
+
+        /* DROPDOWN (CLICK) */
+        const dropBtn = document.querySelector(".dropbtn");
+        const dropMenu = document.querySelector(".dropdown-content");
+
+        dropBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            dropMenu.classList.toggle("show");
+        });
+
+        document.addEventListener("click", (e) => {
+            if (!dropMenu.contains(e.target)) {
+                dropMenu.classList.remove("show");
+            }
+        });
+    </script>
+
+</body>
+
+</html>

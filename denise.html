@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denise's Profile</title>
+    <link rel="stylesheet" href="denise.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <a href="main.html">Home</a>
+        <a href="main.html">About</a>
+
+        <!-- CLICK DROPDOWN -->
+        <div class="dropdown">
+            <div class="dropbtn" id="careerBtn">Career ▾</div>
+
+            <div class="dropdown-content" id="dropdownMenu">
+                <a href="denise.html">Denise</a>
+                <a href="me.html">Jami</a>
+                <a href="clark.html">Clark</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <div class="about-section">
+        <h2>Personal Information</h2>
+
+        <div class="about-layout">
+            <div class="about-img">
+                <img src="C:\Users\Jamison\OneDrive\Desktop\Codes For java\ortfolio\denise2.jpg" alt="">
+            </div>
+
+            <div class="about-info">
+                <strong>Name:</strong><br>
+                <p>Denise Victoria R. Quintos</p>
+                <strong>Age:</strong><br>
+                <p>19 Years Old</p>
+                <strong>Skills:</strong><br>
+                <p>Confident, Problem-Solver, Leadership, Computer Literacy</p>
+                <strong>Bio:</strong>
+                <p>I am a Information Technology First Year Student in the University of the Cordilleras who likes coding, creative ideas and managing my peers to creating a good output.
+</p>
+            </div>
+        </div>
+    </div>
+        <h1 class="heading">MBTI RESULT</h1>
+    <!-- ⭐ NEW 4 BOXES SECTION -->
+    <div class="four-box-section">
+        <div class="mini-box">
+            <div class="mini-img">
+                <img src="C:\Users\Jamison\OneDrive\Desktop\Codes For java\ortfolio\e.png" alt="">
+            </div>
+            <p>Extraversion: I gain energy from interaction, collaboration, and engaging with people.</p>
+        </div>
+
+        <div class="mini-box">
+            <div class="mini-img">
+                <img src="C:\Users\Jamison\OneDrive\Desktop\Codes For java\ortfolio\n.png" alt="">
+            </div>
+            <p>Intuition: I focus on ideas, patterns, and possibilities rather than concrete details.</p>
+        </div>
+
+        <div class="mini-box">
+            <div class="mini-img">
+                <img src="C:\Users\Jamison\OneDrive\Desktop\Codes For java\ortfolio\t.png" alt="">
+            </div>
+            <p>Thinking: I make decisions using logic, objectivity, and rational analysis.</p>
+        </div>
+
+        <div class="mini-box">
+            <div class="mini-img">
+                <img src="C:\Users\Jamison\OneDrive\Desktop\Codes For java\ortfolio\p.png" alt="">
+            </div>
+            <p>Perceiving: I prefer flexibility, spontaneity, and keeping options open rather than strict structure.</p>
+        </div>
+    </div>
+
+
+    <h1 class="proj-heading">Projects and Achievements</h1>
+
+<div class="project-section">
+
+    <!-- LEFT IMAGE / RIGHT TEXT -->
+    <div class="project-row">
+        <div class="proj-img"><img src="C:\Users\Jamison\OneDrive\Desktop\Codes For java\ortfolio\denise-achiev1.jpg"></div>
+        <div class="proj-text">
+            <h3>Co-Created Tourmi</h3>
+            <p>Tourmi is a traveling application made for Baguio City with preference that adjusts to your interests and medical concerns like allergies. This project was made as my output for Grade 11 and Grade 12 in Baguio City National Science High School. The application was made using Java and was used for competitions.</p>
+        </div>
+    </div>
+
+    <!-- RIGHT IMAGE / LEFT TEXT -->
+    <div class="project-row reverse">
+        <div class="proj-img"><img src="C:\Users\Jamison\OneDrive\Desktop\Codes For java\ortfolio\denise-achieve2.jpg"></div>
+        <div class="proj-text">
+            <h3>Episode 07 of I-Solb Natin 'Yan</h3>
+            <p>On February 2025, I was interviewed by Sol Go for her show I-Solb Natin 'Yan. The interview contained questions of the importance of the Information Communication and Technology Strand, as well as what we learned. Taraki, an CITCS organization of the University of the Cordilleras, joined the show to further inform others about technology.</p>
+        </div>
+    </div>
+
+    <!-- LEFT IMAGE / RIGHT TEXT -->
+    <div class="project-row">
+        <div class="proj-img"><img src="C:\Users\Jamison\OneDrive\Desktop\Codes For java\ortfolio\denise-achieve3.jpg"></div>
+        <div class="proj-text">
+            <h3>Yandere Simulator Game</h3>
+            <p>During my first quarters of my senior high in Baguio City National Science High School, we were tasked to make a Java text-based game. Accompanied by my classmates, Yandere Simulator was created. The goal of the game is the gain skill points to eliminate other characters and win the heart of the main character's love interest, Senpai.</p>
+        </div>
+    </div>
+
+</div>
+
+
+
+    <script>
+        /* DROPDOWN CLICK FUNCTION */
+        const careerBtn = document.getElementById("careerBtn");
+        const dropdownMenu = document.getElementById("dropdownMenu");
+
+        careerBtn.addEventListener("click", () => {
+            dropdownMenu.classList.toggle("show");
+        });
+
+        document.addEventListener("click", (event) => {
+            if (!careerBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.classList.remove("show");
+            }
+        });
+    </script>
+
+</body>
+</html>

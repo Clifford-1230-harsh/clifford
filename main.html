@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Portfolio</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .slides img {
+            width: 100%;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+
+        <!-- CLICK DROPDOWN -->
+        <div class="dropdown">
+            <div class="dropbtn" id="careerBtn">Career ▾</div>
+            <div class="dropdown-content" id="dropdownMenu">
+                <a href="#denise">Denise</a>
+                <a href="#jami">Jami</a>
+                <a href="#clark">Clark</a>
+            </div>
+        </div>
+
+        <!-- CONTACT TAB -->
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- HOME -->
+    <div id="home">
+        <h2>PORTFOLIO</h2>
+        <p class="section-text">Memories</p>
+    </div>
+
+    <!-- SLIDESHOW -->
+    <div class="slideshow-container">
+        <div class="slides" id="slideBox">
+            <img src="bleh.jpg">
+            <img src="group2.jpg">
+            <img src="bleh2.jpg">
+        </div>
+        <button class="slide-btn" id="prev">&#10094;</button>
+        <button class="slide-btn" id="next">&#10095;</button>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <div class="about-section" id="about">
+        <h2>How We Met / About</h2>
+        <p class="section-text">A short story about us</p>
+
+        <div class="about-layout">
+            <div class="about-left-img">
+                <img class="image2" src="group.jpg" alt="">
+            </div>
+            <div class="about-right-text">
+                <h3>Our Story</h3>
+                <p>Jamison Garcia and Clark Dolo met in Grade 11 ICT in the University of the Cordilleras. They shared humor and troubles from assignments and video games. Soon they met Denise Quintos in college and found the same humor. Together they share many interests like manga and manhwas, forming a strong bond.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CAREER / MEMBERS -->
+    <div class="about-section" id="career">
+        <h2>Career / Members</h2>
+        <p class="section-text">Meet the team</p>
+
+        <!-- DENISE -->
+        <div class="about-flex" id="denise">
+            <div class="about-img">
+                <img src="denise.jpg">
+            </div>
+            <div class="about-text">
+                <h3>Denise</h3>
+                <p>I am an IT First Year Student in the University of the Cordilleras who likes coding, creative ideas, and managing peers to create good outputs.</p>
+            </div>
+        </div>
+
+        <!-- JAMI -->
+        <div class="about-flex" id="jami">
+            <div class="about-img">
+                <img src="me.jpg">
+            </div>
+            <div class="about-text">
+                <h3>Jami</h3>
+                <p>I am an IT First Year Student at the University of the Cordilleras who enjoys digital designs, exploring new tools, and contributing creative ideas to projects.</p>
+            </div>
+        </div>
+
+        <!-- CLARK -->
+        <div class="about-flex" id="clark">
+            <div class="about-img">
+                <img src="clark.jpg">
+            </div>
+            <div class="about-text">
+                <h3>Clark</h3>
+                <p>I am an IT First Year Student at the University of the Cordilleras who enjoys exploring technologies, developing solutions, and contributing through teamwork.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="contact-section">
+        <h2>Contact</h2>
+        <p>Email or other contact details here.</p>
+    </div>
+
+    <!-- JS -->
+    <script>
+        /* SLIDESHOW */
+        let slideIndex = 0;
+        const slides = document.getElementById("slideBox");
+
+        document.getElementById("next").onclick = () => moveSlide(1);
+        document.getElementById("prev").onclick = () => moveSlide(-1);
+
+        function moveSlide(n) {
+            slideIndex = (slideIndex + n + 3) % 3;
+            slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+        }
+
+        setInterval(() => moveSlide(1), 4000);
+
+        /* DROPDOWN CLICK FUNCTION */
+        const careerBtn = document.getElementById("careerBtn");
+        const dropdownMenu = document.getElementById("dropdownMenu");
+
+        careerBtn.addEventListener("click", () => {
+            dropdownMenu.classList.toggle("show");
+        });
+
+        document.addEventListener("click", (event) => {
+            if (!careerBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.classList.remove("show");
+            }
+        });
+    </script>
+
+</body>
+</html>
