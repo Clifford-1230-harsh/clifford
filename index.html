@@ -10,6 +10,7 @@
         html {
             scroll-behavior: smooth;
         }
+
         .slides img {
             width: 100%;
             display: block;
@@ -66,7 +67,10 @@
             </div>
             <div class="about-right-text">
                 <h3>Our Story</h3>
-                <p>Jamison Garcia and Clark Dolo met in Grade 11 ICT in the University of the Cordilleras. They shared humor and troubles from assignments and video games. Soon they met Denise Quintos in college and found the same humor. Together they share many interests like manga and manhwas, forming a strong bond.</p>
+                <p>Jamison Garcia and Clark Dolo met in Grade 11 ICT in the University of the Cordilleras. They shared
+                    humor and troubles from assignments and video games. Soon they met Denise Quintos in college and
+                    found the same humor. Together they share many interests like manga and manhwas, forming a strong
+                    bond.</p>
             </div>
         </div>
     </div>
@@ -83,50 +87,60 @@
             </div>
             <div class="about-text">
                 <h3>Denise</h3>
-                <p>I am an IT First Year Student in the University of the Cordilleras who likes coding, creative ideas, and managing peers to create good outputs.</p>
+                <p>I am an IT First Year Student in the University of the Cordilleras who likes coding, creative ideas,
+                    and managing peers to create good outputs.</p>
             </div>
         </div>
 
         <!-- JAMI -->
         <div class="about-flex" id="jami">
             <div class="about-img">
-                <img src="jami.jpg">
+                <img src="images/jami.jpg">
             </div>
             <div class="about-text">
                 <h3>Jami</h3>
-                <p>I am an IT First Year Student at the University of the Cordilleras who enjoys digital designs, exploring new tools, and contributing creative ideas to projects.</p>
+                <p>I am an IT First Year Student at the University of the Cordilleras who enjoys digital designs,
+                    exploring new tools, and contributing creative ideas to projects.</p>
             </div>
         </div>
 
         <!-- CLARK -->
         <div class="about-flex" id="clark">
             <div class="about-img">
-                <img src="clarky2.png">
+                <img src="images/clarky2.png">
             </div>
             <div class="about-text">
                 <h3>Clark</h3>
-                <p>I am an IT First Year Student at the University of the Cordilleras who enjoys exploring technologies, developing solutions, and contributing through teamwork.</p>
+                <p>I am an IT First Year Student at the University of the Cordilleras who enjoys exploring technologies,
+                    developing solutions, and contributing through teamwork.</p>
             </div>
         </div>
     </div>
 
-    <!-- CONTACT --
+    <!-- CONTACT -->
+
 
     <!-- JS -->
     <script>
         /* SLIDESHOW */
         let slideIndex = 0;
         const slides = document.getElementById("slideBox");
+        const images = slides.querySelectorAll("img");
+        const totalSlides = images.length;
+
+        // Set dynamic width based on number of images
+        slides.style.width = `${totalSlides * 100}%`;
 
         document.getElementById("next").onclick = () => moveSlide(1);
         document.getElementById("prev").onclick = () => moveSlide(-1);
 
         function moveSlide(n) {
-            slideIndex = (slideIndex + n + 3) % 3;
-            slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+            slideIndex = (slideIndex + n + totalSlides) % totalSlides;
+            slides.style.transform = `translateX(-${slideIndex * (100 / totalSlides)}%)`;
         }
 
         setInterval(() => moveSlide(1), 4000);
+
 
         /* DROPDOWN CLICK FUNCTION */
         const careerBtn = document.getElementById("careerBtn");
@@ -144,12 +158,5 @@
     </script>
 
 </body>
+
 </html>
-
-
-
-
-
-
-
-
