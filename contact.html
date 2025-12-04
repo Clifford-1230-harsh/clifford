@@ -6,11 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
     <link rel="stylesheet" href="main.css">
+
     <style>
-        /* Extra styling for form */
-        .comment-form {
-            margin: 40px auto;
+        body {
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            color: #fff;
+            background: linear-gradient(145deg, #2b0f0f, #3f1d1d);
+        }
+
+        /* Contact Section Styling */
+        .contact-section {
             max-width: 600px;
+            margin: 60px auto;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-section h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: #ffcc66;
+        }
+
+        .contact-section p {
+            font-size: 18px;
+            margin: 10px 0 20px;
+        }
+
+        /* List styling */
+        .contact-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto 20px;
+            width: fit-content;
+        }
+
+        .contact-section li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 18px;
+            margin: 8px 0;
+            justify-content: flex-start;
+        }
+
+        .contact-section li span.icon {
+            font-size: 20px;
+            width: 25px;
+            text-align: center;
+        }
+
+        /* Comment Form Styling */
+        .comment-form {
+            margin: 30px auto 10px;
+            max-width: 500px;
             display: flex;
             flex-direction: column;
             gap: 15px;
@@ -18,21 +71,20 @@
 
         .comment-form input,
         .comment-form textarea {
-            padding: 10px;
+            padding: 12px;
             border-radius: 10px;
             border: none;
-            outline: none;
             font-size: 16px;
         }
 
         .comment-form button {
-            padding: 10px;
+            padding: 12px;
             border-radius: 10px;
             border: none;
             background: #ffcc00;
-            color: #000;
-            font-weight: bold;
+            font-size: 17px;
             cursor: pointer;
+            font-weight: bold;
             transition: 0.3s;
         }
 
@@ -40,29 +92,18 @@
             background: #e6b800;
         }
 
-        .comments-display {
-            max-width: 600px;
-            margin: 20px auto;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
+        /* Comments box */
         .comment-item {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
             padding: 15px;
-            border-radius: 15px;
+            margin-top: 12px;
+            border-radius: 12px;
+            text-align: left;
         }
 
         .comment-item h4 {
-            margin: 0 0 5px;
-            font-size: 18px;
             color: #ffcc00;
-        }
-
-        .comment-item p {
-            margin: 0;
-            font-size: 16px;
+            margin-bottom: 5px;
         }
     </style>
 </head>
@@ -71,10 +112,9 @@
 
     <!-- NAVBAR -->
     <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="index.html">About</a>
+        <a href="main.html">Home</a>
+        <a href="main.html">About</a>
 
-        <!-- CLICK DROPDOWN -->
         <div class="dropdown">
             <div class="dropbtn">Career ▾</div>
             <div class="dropdown-content">
@@ -84,33 +124,32 @@
             </div>
         </div>
 
-        <!-- CONTACT TAB -->
         <a href="contact.html">Contact</a>
     </div>
 
-    <!-- CONTACT INFO SECTION -->
+    <!-- CONTACT INFO -->
     <div class="contact-section">
         <h2>Contact Us</h2>
-        <p>You can reach us at:</p>
 
+        <p>You can reach us at:</p>
         <ul>
-            <li>📞 0912345678 Denise</li>
-            <li>📞 0987654321 Jamisson</li>
-            <li>📞 0911122233 Clark</li>
+            <li><span class="icon">📞</span> 0912345678 Denise</li>
+            <li><span class="icon">📞</span> 0987654321 Jamisson</li>
+            <li><span class="icon">📞</span> 0911122233 Clark</li>
         </ul>
 
         <p>Or email us at:</p>
-
         <ul>
-            <li>📧 Denise3245@gmail.com</li>
-            <li>📧 Jamisson2321@gmail.com</li>
-            <li>📧 Clark35215@gmail.com</li>
+            <li><span class="icon">📧</span> Denise3245@gmail.com</li>
+            <li><span class="icon">📧</span> Jamisson2321@gmail.com</li>
+            <li><span class="icon">📧</span> Clark35215@gmail.com</li>
         </ul>
     </div>
 
     <!-- COMMENT FORM -->
     <div class="contact-section">
         <h2>Leave a Comment</h2>
+
         <form class="comment-form" id="commentForm">
             <input type="text" id="name" placeholder="Your Name" required>
             <input type="email" id="email" placeholder="Your Email" required>
@@ -118,10 +157,7 @@
             <button type="submit">Submit Comment</button>
         </form>
 
-        <!-- COMMENTS DISPLAY -->
-        <div class="comments-display" id="commentsDisplay">
-            <!-- Comments will appear here -->
-        </div>
+        <div id="commentsDisplay"></div>
     </div>
 
     <script>
@@ -140,11 +176,10 @@
             commentItem.innerHTML = `<h4>${name} (${email})</h4><p>${comment}</p>`;
 
             display.appendChild(commentItem);
-
             form.reset();
         });
 
-        /* DROPDOWN (CLICK) */
+        // Dropdown
         const dropBtn = document.querySelector(".dropbtn");
         const dropMenu = document.querySelector(".dropdown-content");
 
@@ -153,14 +188,9 @@
             dropMenu.classList.toggle("show");
         });
 
-        document.addEventListener("click", (e) => {
-            if (!dropMenu.contains(e.target)) {
-                dropMenu.classList.remove("show");
-            }
-        });
+        document.addEventListener("click", () => dropMenu.classList.remove("show"));
     </script>
 
 </body>
-
 
 </html>
